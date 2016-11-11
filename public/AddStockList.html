@@ -1,0 +1,49 @@
+<!-- <div class="row">
+	<form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="productName">ProductName:</label>
+      <div class="col-sm-10">
+        <input type="text" ng-model="product.productName" class="form-control" id="productName" placeholder="Product Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="CompanyName">CompanyName:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="product.companyName" id="CompanyName" placeholder="Company Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn btn-primary" ng-click="addproduct()">Add Product</button>
+      </div>
+    </div>
+  </form>
+</div>
+ -->
+<div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>companyName</th>         
+          <th>productName</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" ng-model="product.companyName"></td>
+          <td><input class="form-control" ng-model="product.productName"></td>
+          <td><button class="btn btn-primary" ng-click="addproduct()">Add Contact</button></td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="product in producttable">
+          <td>{{product.companyName}}</td>
+          <td>{{product.productName}}</td>
+          <td><button class="btn btn-danger" ng-click="remove(product._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(product._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>

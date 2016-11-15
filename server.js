@@ -44,7 +44,8 @@ app.put('/productlist/:id', function (req, res) {
   console.log("??????????",req.body);
   db.productlist.findAndModify({
     query: {_id: mongojs.ObjectId(id)},
-    update: {$set: {companyName: req.body.companyName, productName: req.body.productName}},
+    update: {$set: {companyName: req.body.companyName, productName: req.body.productName,batch:req.body.batch,ExDt:req.body.ExDt,
+mrp:req.body.mrp,qty:req.body.qty,free:req.body.free,rate:req.body.rate,vat:req.body.vat}},
     new: true}, function (err, doc) {
       res.json(doc);
     }
